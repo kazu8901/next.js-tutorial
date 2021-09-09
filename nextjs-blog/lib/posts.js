@@ -42,8 +42,7 @@ export function getSortedPostsData() {
 
 export async function getAllPostIds() {
   // const fileNames = fs.readdirSync(postsDirectory)
-  const repoUrl = "https://api.github.com/repos/deatiger/nextjs-tutorial-torasemi/contents/posts"
-  // const repoUrl = "https://api.github.com/repos/deatiger/nextjs-tutorial-torasemi/contents/posts"
+  const repoUrl = "https://api.github.com/repos/kazu8901/next.js-tutorial/contents/nextjs-blog/posts"
   const response = await fetch(repoUrl)
   const files = await response.json()
   const fileNames = files.map(file => file.name)
@@ -75,7 +74,7 @@ export async function getPostData(id) {
   // const fullPath = path.join(postsDirectory, `${id}.md`)
   // const fileContents = fs.readFileSync(fullPath, 'utf8')
 
-  const repoUrl = `https://api.github.com/repos/deatiger/nextjs-tutorial-torasemi/contents/posts/${id}.md`
+  const repoUrl = `https://api.github.com/repos/kazu8901/next.js-tutorial/contents/nextjs-blog/posts/${id}.md`
   const response = await fetch(repoUrl)
   const file = await response.json()
   const fileContents = base64.decode(file.content)
